@@ -1,0 +1,25 @@
+.message-main {
+  margin: 30px auto;
+  width: 500px;
+  height: 465px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.message-input {
+  width: 300px;
+
+}
+.message-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.my-message {
+  align-self: flex-end;
+}
