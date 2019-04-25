@@ -1,27 +1,14 @@
 import React from 'react';
 
-import {List, ListItem} from "material-ui";
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
-import ActionGrade from 'material-ui/svg-icons/action/grade';
-import ContentSend from 'material-ui/svg-icons/content/send';
-import ContentDrafts from 'material-ui/svg-icons/content/drafts';
-import Divider from 'material-ui/Divider'
-import ActionInfo from 'material-ui/svg-icons/action/info';
-
-
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import Badge from 'material-ui/Badge';
-import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
-
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import SendIcon from 'material-ui/svg-icons/content/create';
 
 import TextField from 'material-ui/TextField';
 
+import LeftList from './LeftList';
 import Message from './Message';
 import '../styles/message.scss';
+import Header from "./Header";
 
 export default class MessageField extends React.Component{
     state = {
@@ -96,41 +83,9 @@ export default class MessageField extends React.Component{
                 sender = { messages[messageId].sender }
             />
         );
-
-
         //window.addEventListener('keyup', this.handleKeyUp);
 
         return (
-            <div className={ "main" }>
-                <AppBar
-                    title={ <span className={ "main-title" }>Messaged</span> }
-                    onTitleClick={ this.handleTitle }
-                    iconElementLeft={ <IconButton><NavigationClose /></IconButton> }
-                    iconElementRight={ <Badge
-                        badgeContent={this.messageCounter()}
-                        primary={true}
-                        badgeStyle={{top: 12, right: 12, background: 'red', borderRadius: 50 }}
-                    >
-                        <NotificationsIcon />
-                    </Badge> }
-                />
-                <div className={ "message-main" }>
-                    <div className={ "message-lists" }>
-                        <List>
-                            <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
-                            <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />
-                            <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} />
-                            <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
-                            <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
-                        </List>
-                        <Divider />
-                        <List>
-                            <ListItem primaryText="All mail" rightIcon={<ActionInfo />} />
-                            <ListItem primaryText="Trash" rightIcon={<ActionInfo />} />
-                            <ListItem primaryText="Spam" rightIcon={<ActionInfo />} />
-                            <ListItem primaryText="Follow up" rightIcon={<ActionInfo />} />
-                        </List>
-                    </div>
                     <div className={'message-box'}>
                         <div className={ "message-field" }>
                             { messageComponents }
@@ -147,8 +102,6 @@ export default class MessageField extends React.Component{
                             <SendIcon/>
                         </FloatingActionButton>
                     </div>
-                </div>
-            </div>
         )
     }
 }
