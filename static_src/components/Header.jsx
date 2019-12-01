@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
@@ -7,6 +6,7 @@ import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 
 export default class Header extends React.Component {
+
     render() {
         return(
             <AppBar
@@ -14,7 +14,7 @@ export default class Header extends React.Component {
                 onTitleClick={this.handleTitle}
                 iconElementLeft={<IconButton><NavigationClose/></IconButton>}
                 iconElementRight={<Badge
-                    badgeContent={this.props.messageCounter()}
+                    badgeContent={this.props.messageCounter }
                     primary={true}
                     badgeStyle={{top: 12, right: 12, background: 'red', borderRadius: 50}}
                 >

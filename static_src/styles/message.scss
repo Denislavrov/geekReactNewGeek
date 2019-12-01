@@ -23,3 +23,10 @@
 .my-message {
   align-self: flex-end;
 }
+.message-box {
+  width: 70%;
+}
+
+.massage-input {
+  min-width: calc(100% - 60px);
+}

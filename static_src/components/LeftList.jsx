@@ -7,7 +7,7 @@ import ContentSend from 'material-ui/svg-icons/content/send';
 import ContentDrafts from 'material-ui/svg-icons/content/drafts';
 import Divider from 'material-ui/Divider'
 import ActionInfo from 'material-ui/svg-icons/action/info';
-
+import '../styles/style.scss';
 
 
 export default class LeftList extends React.Component{
